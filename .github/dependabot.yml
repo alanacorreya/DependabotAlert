@@ -5,13 +5,20 @@ updates:
     schedule:
       interval: "daily"
     allow:
-      # For dependencies from the "org.springframework.security" group
-      - dependency-name: "org.springframework.security:*"
+      # For all dependencies
+      - dependency-type: "all"
         schedule:
           interval: "daily"
           creates: "pull-request"
-      # For all other dependencies
-      - dependency-name: "*"
+      # For security updates
+      - dependency-type: "direct"
+        security-updates: true
+        schedule:
+          interval: "daily"
+          creates: "pull-request"
+      # For version updates
+      - dependency-type: "all"
+        versioning-strategy: "widen"
         schedule:
           interval: "daily"
           creates: "pull-request"
