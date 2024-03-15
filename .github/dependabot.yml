@@ -8,9 +8,11 @@ updates:
       - dependency-name: "org.springframework.security:*"
         schedule:
           interval: "daily"
+          creates: "pull-request"
       - dependency-name: "*"
         schedule:
           interval: "weekly"
+          creates: "pull-request"
     commit-message:
       prefix: "chore(deps):"
     reviewers:
