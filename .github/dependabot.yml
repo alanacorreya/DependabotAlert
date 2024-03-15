@@ -8,11 +8,9 @@ updates:
       - dependency-name: "org.springframework.security:*"
         schedule:
           interval: "daily"
-          creates: "issues"
       - dependency-name: "*"
         schedule:
           interval: "weekly"
-          creates: "issues"
     commit-message:
       prefix: "chore(deps):"
     reviewers:
@@ -25,6 +23,7 @@ updates:
       - "security"
       - "version"
 notifications:
-  email:
-    - "alana.correya@ust.com"
-    - "keerthi.nallattesoman@ust.com"
+  - email:
+      recipients:
+        - "alana.correya@ust.com"
+        - "keerthi.nallattesoman@ust.com"
