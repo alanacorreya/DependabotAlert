@@ -25,13 +25,17 @@ updates:
     reviewers:
       - reviewers:
           - "alana.correya@ust.com"
+          - "keerthi.nallattesoman@ust.com" # Second reviewer
       - teams:
           - "alana.correya@ust.com"
+          - "keerthi.nallattesoman@ust.com" # Second reviewer
     assignees:
       - "alana.correya@ust.com"
+      - "keerthi.nallattesoman@ust.com" # Second reviewer
     labels:
       - "dependencies"
       - "security"
 notifications:
   email:
     - "alana.correya@ust.com"
+    - "keerthi.nallattesoman@ust.com" # Second email address
