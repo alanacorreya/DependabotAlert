@@ -5,10 +5,12 @@ updates:
     schedule:
       interval: "daily"
     allow:
+      # For dependencies from the "org.springframework.security" group
       - dependency-name: "org.springframework.security:*"
         schedule:
           interval: "daily"
           creates: "pull-request"
+      # For all other dependencies
       - dependency-name: "*"
         schedule:
           interval: "weekly"
@@ -22,10 +24,5 @@ updates:
       - "alana.correya@ust.com"
       - "keerthi.nallattesoman@ust.com"
     labels:
+      - "dependencies"
       - "security"
-      - "version"
-notifications:
-  - email:
-      recipients:
-        - "alana.correya@ust.com"
-        - "keerthi.nallattesoman@ust.com"
