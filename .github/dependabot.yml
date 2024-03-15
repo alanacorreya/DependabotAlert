@@ -6,27 +6,18 @@ updates:
       interval: "daily"
     allow:
       - dependency-name: "org.springframework.security:*"
-        schedules:
-          - interval: "daily"
-            creates: "issues"
-          - interval: "daily"
-            creates: "pull-request"
-            open-pull-requests-limit: 5
+        schedule:
+          interval: "daily"
+          creates: "issues"
       - dependency-name: "*"
-        schedules:
-          - interval: "weekly"
-            creates: "issues"
-          - interval: "weekly"
-            creates: "pull-request"
-            open-pull-requests-limit: 5
+        schedule:
+          interval: "weekly"
+          creates: "issues"
     commit-message:
       prefix: "chore(deps):"
     reviewers:
-      - reviewers:
-          - "alana.correya@ust.com"
-          - "keerthi.nallattesoman@ust.com"
-      - teams:
-          - "alana.correya@ust.com"
+      - "alana.correya@ust.com"
+      - "keerthi.nallattesoman@ust.com"
     assignees:
       - "alana.correya@ust.com"
       - "keerthi.nallattesoman@ust.com"
