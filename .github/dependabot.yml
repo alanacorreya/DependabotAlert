@@ -4,20 +4,19 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "maven"
-        versions: ["3.5.*"]
-      - dependency-name: "org.springframework.security:spring-security-web"
-        versions: ["4.2.13.RELEASE"]
-      - dependency-name: "org.springframework.security:spring-security-config"
-        versions: ["4.2.13.RELEASE"]
     allow:
-      - dependency-name: "*"
-        dependency-type: "all"
+      - dependency-name: "org.springframework.security:*"
         schedules:
           - interval: "daily"
             creates: "issues"
           - interval: "daily"
+            creates: "pull-request"
+            open-pull-requests-limit: 5
+      - dependency-name: "*"
+        schedules:
+          - interval: "weekly"
+            creates: "issues"
+          - interval: "weekly"
             creates: "pull-request"
             open-pull-requests-limit: 5
     commit-message:
@@ -25,17 +24,15 @@ updates:
     reviewers:
       - reviewers:
           - "alana.correya@ust.com"
-          - "keerthi.nallattesoman@ust.com" # Second reviewer
       - teams:
           - "alana.correya@ust.com"
-          - "keerthi.nallattesoman@ust.com" # Second reviewer
     assignees:
       - "alana.correya@ust.com"
-      - "keerthi.nallattesoman@ust.com" # Second reviewer
+      - "keerthi.nallattesoman@ust.com"
     labels:
-      - "dependencies"
       - "security"
+      - "version"
 notifications:
   email:
     - "alana.correya@ust.com"
-    - "keerthi.nallattesoman@ust.com" # Second email address
+    - "keerthi.nallattesoman@ust.com"
