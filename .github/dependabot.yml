@@ -24,6 +24,13 @@ updates:
           creates: "pull-request"
     commit-message:
       prefix: "chore(deps):"
+    reviewers:
+      - "alana.correya@ust.com"
+      - "keerthi.nallattesoman@ust.com"
+    assignees:
+      - "alana.correya@ust.com"
+      - "keerthi.nallattesoman@ust.com"
     labels:
       - "dependencies"
       - "security"
+
